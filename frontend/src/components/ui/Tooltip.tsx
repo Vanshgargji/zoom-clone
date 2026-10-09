@@ -3,7 +3,7 @@
 import * as RadixTooltip from "@radix-ui/react-tooltip";
 import type { ReactElement } from "react";
 
-export const NOT_AVAILABLE = "Not available in this demo";
+export const NOT_AVAILABLE = "Feature locked in trial mode";
 
 type TooltipProps = {
   content: string;
@@ -19,10 +19,10 @@ export function Tooltip({ content, children }: TooltipProps) {
         <RadixTooltip.Portal>
           <RadixTooltip.Content
             sideOffset={6}
-            className="z-50 rounded-md bg-zoom-navy px-2.5 py-1.5 text-xs text-white shadow-md"
+            className="z-50 rounded-md bg-zoom-blue px-2.5 py-1.5 text-xs text-white shadow-md"
           >
             {content}
-            <RadixTooltip.Arrow className="fill-zoom-navy" />
+            <RadixTooltip.Arrow className="fill-zoom-blue" />
           </RadixTooltip.Content>
         </RadixTooltip.Portal>
       </RadixTooltip.Root>

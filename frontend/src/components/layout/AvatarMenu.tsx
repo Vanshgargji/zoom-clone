@@ -53,7 +53,11 @@ export function AvatarMenu() {
             label="Profile" 
             onSelect={() => { window.location.href = "/profile"; }} 
           />
-          <MenuItem icon={Settings} label="Settings" onSelect={() => showToast(NOT_AVAILABLE)} />
+          <MenuItem 
+            icon={Settings} 
+            label="Settings" 
+            onSelect={() => { window.location.href = "/settings"; }} 
+          />
           <MenuItem icon={CreditCard} label="Plans and billing" onSelect={() => showToast(NOT_AVAILABLE)} />
           <MenuItem 
             icon={Book} 

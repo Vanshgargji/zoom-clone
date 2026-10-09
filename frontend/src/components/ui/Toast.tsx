@@ -32,13 +32,13 @@ export function ToastProvider({ children }: { children: ReactNode }) {
         className="pointer-events-none fixed inset-x-0 top-4 z-50 flex justify-center px-4"
       >
         {toast && (
-          <div className="pointer-events-auto flex items-center gap-4 rounded-xl bg-room-bar px-5 py-3 text-[15px] text-white shadow-lg">
+          <div className="pointer-events-auto flex items-center gap-4 rounded-xl bg-zoom-blue px-5 py-3 text-[15px] font-medium text-white shadow-lg">
             <span>{toast.message}</span>
             <button
               type="button"
               aria-label="Dismiss"
               onClick={() => setToast(null)}
-              className="rounded text-white/80 hover:text-white"
+              className="rounded text-white/80 hover:text-white transition-colors"
             >
               <X size={16} />
             </button>
