@@ -20,9 +20,8 @@ export function Sidebar() {
       <nav aria-label="Main" className="sticky top-16 flex flex-col px-2 py-3">
         <SidebarLink href="/" label="Home" active={pathname === "/"} />
         <p className="mt-4 mb-1 px-1 text-xs text-text-secondary">My Products</p>
-        {/* The meetings list lives on Home in this demo, so Meetings links there.
-            It is highlighted on the Schedule pages, as in Zoom. */}
-        <SidebarLink href="/" label="Meetings" active={pathname.startsWith("/schedule")} />
+        {/* The meetings list now has its own dedicated page at /meetings */}
+        <SidebarLink href="/meetings" label="Meetings" active={pathname.startsWith("/meetings") || pathname.startsWith("/schedule")} />
         {PLACEHOLDER_PRODUCTS.map((label) => (
           <NotAvailable key={label}>
             <button type="button" aria-disabled="true" className={ITEM_CLASSES}>
