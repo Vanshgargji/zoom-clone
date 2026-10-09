@@ -14,7 +14,7 @@ from app.seed import seed_if_empty
 from app.services.host_keys import ONLY_THE_HOST
 from app.utils.time import utc_now
 from tests.factories import add_scheduled_meeting
-from tests.test_schedule import schedule_body
+from tests.schedule_test import schedule_body
 
 # What each action answers when it is allowed.
 ALLOWED = {"start": 200, "edit": 200, "delete": 204}

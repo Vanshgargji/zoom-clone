@@ -4,7 +4,7 @@ import pytest
 from sqlalchemy import func, select
 from sqlalchemy.orm import Session
 
-from app.deps import DEFAULT_USER_EMAIL
+from app.dependencies import DEFAULT_USER_EMAIL
 from app.models import Meeting, MeetingSession, User
 from app.seed import seed_if_empty
 from app.seed_time import SEED_TIMEZONE, later_today, office_time

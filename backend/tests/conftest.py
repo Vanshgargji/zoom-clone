@@ -6,7 +6,7 @@ from fastapi.testclient import TestClient
 from sqlalchemy.orm import Session, sessionmaker
 
 from app.db import create_db_engine, get_db, get_session_factory
-from app.deps import DEFAULT_USER_EMAIL
+from app.dependencies import DEFAULT_USER_EMAIL
 from app.main import app
 from app.models import User, create_tables
 from app.realtime.connection_manager import ConnectionManager

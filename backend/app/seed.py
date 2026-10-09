@@ -10,7 +10,7 @@ from datetime import date, datetime, timedelta
 from sqlalchemy import select
 from sqlalchemy.orm import Session
 
-from app.deps import DEFAULT_USER_EMAIL
+from app.dependencies import DEFAULT_USER_EMAIL
 from app.models import User
 from app.seed_rows import add_ended_session, add_meeting
 from app.seed_time import TODAY_MINUTES, later_today, office_time, today_in_india

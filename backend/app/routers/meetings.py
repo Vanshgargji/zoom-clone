@@ -1,6 +1,6 @@
 from fastapi import APIRouter, status
 
-from app.deps import CurrentUser, DbSession, HostKey, MeetingByCode
+from app.dependencies import CurrentUser, DbSession, HostKey, MeetingByCode
 from app.schemas.join import JoinIn, JoinOut, JoinWithKeyOut
 from app.schemas.meeting import (
     InstantIn,
