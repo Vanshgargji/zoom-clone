@@ -48,7 +48,11 @@ export function AvatarMenu() {
         
         {/* Main Links */}
         <div className="py-1">
-          <MenuItem icon={User} label="Profile" onSelect={() => showToast(NOT_AVAILABLE)} />
+          <MenuItem 
+            icon={User} 
+            label="Profile" 
+            onSelect={() => { window.location.href = "/profile"; }} 
+          />
           <MenuItem icon={Settings} label="Settings" onSelect={() => showToast(NOT_AVAILABLE)} />
           <MenuItem icon={CreditCard} label="Plans and billing" onSelect={() => showToast(NOT_AVAILABLE)} />
           <MenuItem 
