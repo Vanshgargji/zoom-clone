@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
 import { NotAvailable } from "@/components/ui/Tooltip";
 
 // Zoom products this demo doesn't have. They are shown so the sidebar looks like Zoom's.
-const PLACEHOLDER_PRODUCTS = ["Recordings", "Summaries", "Whiteboards", "Notes", "Clips"];
+const PLACEHOLDER_PRODUCTS = ["Summaries", "Whiteboards", "Notes", "Clips"];
 
 const ITEM_CLASSES = "rounded-md py-2 pl-7 text-left text-[15px]";
 
@@ -22,6 +22,7 @@ export function Sidebar() {
         <p className="mt-4 mb-1 px-1 text-xs text-text-secondary">My Products</p>
         {/* The meetings list now has its own dedicated page at /meetings */}
         <SidebarLink href="/meetings" label="Meetings" active={pathname.startsWith("/meetings") || pathname.startsWith("/schedule")} />
+        <SidebarLink href="/recordings" label="Recordings" active={pathname.startsWith("/recordings")} />
         {PLACEHOLDER_PRODUCTS.map((label) => (
           <NotAvailable key={label}>
             <button type="button" aria-disabled="true" className={ITEM_CLASSES}>
