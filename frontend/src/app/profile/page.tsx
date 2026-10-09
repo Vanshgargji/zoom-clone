@@ -79,16 +79,16 @@ export default function ProfilePage() {
         <div className="mb-6 flex items-start justify-between sm:items-center">
           <div className="flex items-center gap-6">
             <Avatar
-              name={user?.name ?? "Vansh Garg"}
+              name={user?.name ?? "Prithvi Garg"}
               color={user?.avatar_color ?? "#0b5cff"}
               className="size-[120px] rounded-[24px] text-[48px] shadow-sm"
             />
             <div>
               <h1 className="text-[24px] font-bold text-gray-900">
-                {user?.name ?? "Vansh Garg"}
+                {user?.name ?? "Prithvi Garg"}
               </h1>
               <p className="mt-1 text-[15px] text-gray-500">
-                {user?.name ?? "Vansh Garg"}
+                {user?.name ?? "Prithvi Garg"}
               </p>
             </div>
           </div>
