@@ -9,7 +9,7 @@ import { NotAvailable } from "@/components/ui/Tooltip";
 // Zoom products this demo doesn't have. They are shown so the sidebar looks like Zoom's.
 const PLACEHOLDER_PRODUCTS = ["Whiteboards", "Clips"];
 
-const ITEM_CLASSES = "rounded-md py-2 pl-7 text-left text-[15px]";
+const ITEM_CLASSES = "block w-full rounded-2xl py-2 pl-7 text-left text-[15px] transition-colors hover:bg-gray-200/70";
 
 /** The left sidebar of the web portal. Hidden on small screens. */
 export function Sidebar() {

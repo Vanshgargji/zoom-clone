@@ -8,9 +8,9 @@ import type { ReactNode } from "react";
 import { Card } from "@/components/ui/Card";
 import { useStartMeeting } from "@/hooks/useStartMeeting";
 
-const ACTION_CLASSES = "flex flex-col items-center gap-2 rounded-xl p-1 hover:brightness-95";
+const ACTION_CLASSES = "group flex flex-col items-center gap-2 rounded-xl p-1 hover:brightness-95";
 const TILE_CLASSES = "flex size-13 items-center justify-center rounded-xl text-white";
-const LABEL_CLASSES = "text-[13px] font-semibold text-text-secondary";
+const LABEL_CLASSES = "text-[13px] font-semibold text-text-secondary group-hover:underline";
 
 /** The three big buttons at the top right of Home. */
 export function QuickActions() {

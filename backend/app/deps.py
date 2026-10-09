@@ -14,7 +14,7 @@ DbSession = Annotated[Session, Depends(get_db)]
 
 # This demo has no sign-in: the seeded default user is always "logged in".
 # Only get_current_user knows that, so adding real auth means replacing just it.
-DEFAULT_USER_EMAIL = "alex.morgan@example.com"
+DEFAULT_USER_EMAIL = "garg.prithvi@xyz.com"
 
 
 def get_current_user(db: DbSession) -> User:
