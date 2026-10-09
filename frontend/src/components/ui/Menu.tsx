@@ -11,13 +11,13 @@ import type { ReactNode } from "react";
 export const Menu = DropdownMenu.Root;
 export const MenuTrigger = DropdownMenu.Trigger;
 
-export function MenuContent({ children }: { children: ReactNode }) {
+export function MenuContent({ children, className }: { children: ReactNode; className?: string }) {
   return (
     <DropdownMenu.Portal>
       <DropdownMenu.Content
         align="end"
         sideOffset={6}
-        className="z-50 min-w-44 rounded-lg border border-black/10 bg-white py-1 text-text-primary shadow-lg"
+        className={clsx("z-50 min-w-44 rounded-xl border border-black/10 bg-white py-1 text-text-primary shadow-[0_4px_24px_rgba(0,0,0,0.12)]", className)}
       >
         {children}
       </DropdownMenu.Content>
@@ -26,27 +26,31 @@ export function MenuContent({ children }: { children: ReactNode }) {
 }
 
 type MenuItemProps = {
-  icon: LucideIcon;
+  icon?: LucideIcon;
   label: string;
   onSelect: () => void;
   disabled?: boolean;
   danger?: boolean;
+  rightElement?: ReactNode;
 };
 
-export function MenuItem({ icon: Icon, label, onSelect, disabled, danger }: MenuItemProps) {
+export function MenuItem({ icon: Icon, label, onSelect, disabled, danger, rightElement }: MenuItemProps) {
   return (
     <DropdownMenu.Item
       disabled={disabled}
       onSelect={onSelect}
       className={clsx(
         // The highlighted background is the focus indicator, so no outline.
-        "flex cursor-pointer items-center gap-2.5 px-3 py-2 text-sm outline-none",
+        "flex cursor-pointer items-center justify-between px-3 py-2 text-sm outline-none",
         "data-highlighted:bg-surface-active data-disabled:cursor-not-allowed data-disabled:opacity-50",
         danger && "text-zoom-red",
       )}
     >
-      <Icon size={16} aria-hidden="true" />
-      {label}
+      <div className="flex items-center gap-2.5">
+        {Icon ? <Icon size={18} aria-hidden="true" strokeWidth={1.5} className="text-gray-600" /> : <div className="w-[18px]" />}
+        <span className={clsx("text-[15px]", !Icon && "text-gray-800")}>{label}</span>
+      </div>
+      {rightElement && <div>{rightElement}</div>}
     </DropdownMenu.Item>
   );
 }

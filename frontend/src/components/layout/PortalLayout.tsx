@@ -3,12 +3,14 @@ import type { ReactNode } from "react";
 import { Sidebar } from "@/components/layout/Sidebar";
 import { TopNav } from "@/components/layout/TopNav";
 
+import { Footer } from "@/components/layout/Footer";
+
 type PortalLayoutProps = {
   withSidebar?: boolean; // the Join page has no sidebar, as in Zoom
   children: ReactNode;
 };
 
-/** The frame of every web-portal page: top nav, optional sidebar, content. */
+/** The frame of every web-portal page: top nav, optional sidebar, content, and footer. */
 export function PortalLayout({ withSidebar = true, children }: PortalLayoutProps) {
   return (
     <div className="flex min-h-screen flex-col">
@@ -17,6 +19,7 @@ export function PortalLayout({ withSidebar = true, children }: PortalLayoutProps
         {withSidebar && <Sidebar />}
         <main className="min-w-0 flex-1">{children}</main>
       </div>
+      <Footer />
     </div>
   );
 }
