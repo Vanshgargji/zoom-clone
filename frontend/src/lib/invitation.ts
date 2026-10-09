@@ -4,7 +4,7 @@ import type { MeetingOut } from "@/types/api";
 /**
  * The text "Copy Invitation" puts on the clipboard, laid out like Zoom's:
  *
- *   Alex Morgan is inviting you to a scheduled Zoom meeting.
+ *   Prithvi Garg is inviting you to a scheduled Zoom meeting.
  *
  *   Topic: Design review
  *   Description: Walk through the new mockups.   (only if it has one)

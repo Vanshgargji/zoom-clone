@@ -18,7 +18,7 @@ from app.utils.time import utc_now
 
 # (key, name, email, avatar color)
 USERS = [
-    ("alex", "Alex Morgan", DEFAULT_USER_EMAIL, "#EF6C00"),
+    ("alex", "Prithvi Garg", DEFAULT_USER_EMAIL, "#EF6C00"),
     ("priya", "Priya Sharma", "priya.sharma@example.com", "#0E72ED"),
     ("daniel", "Daniel Kim", "daniel.kim@example.com", "#7B3FE4"),
     ("sofia", "Sofia Martinez", "sofia.martinez@example.com", "#00897B"),
@@ -98,7 +98,7 @@ def add_past_meetings(db: Session, codes: set[str], users: dict[str, User], toda
 
     # Yesterday afternoon: Alex's instant meeting with two guests.
     start = office_time(today - timedelta(days=1), "15:00")
-    instant = add_meeting(db, codes, alex, "Alex Morgan's Zoom Meeting", created_at=start)
+    instant = add_meeting(db, codes, alex, "Prithvi Garg's Zoom Meeting", created_at=start)
     add_ended_session(db, instant, start, 25, [alex], ["Jordan Lee", "Maya Patel"])
 
     # Three days ago: the weekly sync dropped and was restarted, so it has two sessions.

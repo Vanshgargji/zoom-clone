@@ -53,7 +53,7 @@ def test_welcome_lists_the_others_and_the_others_hear_of_the_newcomer(
         with connect(live_client, guest, audio=1, video=0) as guest_socket:
             host_entry: dict[str, Any] = {
                 "id": host.participant_id,
-                "display_name": "Alex Morgan",
+                "display_name": "Prithvi Garg",
                 "role": "host",
                 "audio": False,
                 "video": True,

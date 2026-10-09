@@ -31,7 +31,7 @@ def db(session_factory: sessionmaker[Session]) -> Iterator[Session]:
 @pytest.fixture
 def alex(db: Session) -> User:
     """The default user, who is always signed in."""
-    user = User(name="Alex Morgan", email=DEFAULT_USER_EMAIL, avatar_color="#EF6C00")
+    user = User(name="Prithvi Garg", email=DEFAULT_USER_EMAIL, avatar_color="#EF6C00")
     db.add(user)
     db.commit()
     return user

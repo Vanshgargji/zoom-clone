@@ -66,7 +66,7 @@ def test_a_raised_hand_reaches_everyone_and_newcomers(live_client: TestClient) -
         with connect(live_client, newcomer) as newcomer_socket:
             listed = {p["display_name"]: p for p in newcomer_socket.receive_json()["participants"]}
             assert listed["Sam"]["hand_raised"] is True
-            assert listed["Alex Morgan"]["hand_raised"] is False
+            assert listed["Prithvi Garg"]["hand_raised"] is False
             joined = host_socket.receive_json()
             assert joined["type"] == "participant_joined"
             assert joined["participant"]["hand_raised"] is False

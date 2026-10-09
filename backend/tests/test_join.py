@@ -28,8 +28,8 @@ def test_an_instant_meeting_is_live_with_its_host(client: TestClient) -> None:
     assert response.status_code == 200
     joined = response.json()
     assert joined["meeting"]["status"] == "live"
-    assert joined["meeting"]["title"] == "Alex Morgan's Zoom Meeting"
-    assert joined["participant"]["display_name"] == "Alex Morgan"
+    assert joined["meeting"]["title"] == "Prithvi Garg's Zoom Meeting"
+    assert joined["participant"]["display_name"] == "Prithvi Garg"
     assert joined["participant"]["role"] == "host"
     assert len(joined["join_token"]) >= 32
 
