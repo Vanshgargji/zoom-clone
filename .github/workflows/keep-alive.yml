@@ -1,0 +1,17 @@
+
+name: Keep Render Backend Alive
+
+on:
+  schedule:
+    - cron: "*/10 * * * *"
+  workflow_dispatch:
+
+jobs:
+  keep-alive:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Backend Health Endpoint
+        run: |
+          curl -fsS --max-time 60 \
+            https://zoom-clone-7bcm.onrender.com/api/health \
+            -o /dev/null
