@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { ListError, ListLoading } from "@/components/dashboard/ListStatus";
 import { MeetingCard } from "@/components/dashboard/MeetingCard";
 import { Card } from "@/components/ui/Card";
@@ -17,7 +18,12 @@ type UpcomingMeetingsProps = {
 export function UpcomingMeetings(props: UpcomingMeetingsProps) {
   return (
     <Card className="p-6">
-      <h2 className="text-[22px] font-bold text-zoom-navy">Upcoming meetings</h2>
+      <div className="flex items-center justify-between">
+        <h2 className="text-[22px] font-bold text-gray-900">Meetings</h2>
+        <Link href="/meetings" className="text-[15px] font-medium text-zoom-blue hover:underline">
+          Visit Meetings
+        </Link>
+      </div>
       <div className="mt-5">
         <UpcomingList {...props} />
       </div>
@@ -38,7 +44,16 @@ function UpcomingList({ resource, onRetry }: UpcomingMeetingsProps) {
   // Deleted meetings disappear at once, before the server has answered.
   const meetings = resource.data.filter((meeting) => !removedCodes.has(meeting.meeting_code));
   if (meetings.length === 0) {
-    return <p className="py-8 text-center text-text-secondary">No upcoming meetings</p>;
+    return (
+      <div className="flex flex-col items-center">
+        <div className="mb-6 w-full rounded-xl bg-[#f7f9fa] px-4 py-3">
+          <p className="text-[15px] font-bold text-gray-900">No Upcoming Meetings</p>
+        </div>
+        <button className="rounded-full bg-[#f0f3f8] px-5 py-2 text-[14px] text-zoom-blue transition-colors hover:bg-gray-200">
+          Test Audio and Video
+        </button>
+      </div>
+    );
   }
 
   const groups = groupUpcoming(meetings, new Date());

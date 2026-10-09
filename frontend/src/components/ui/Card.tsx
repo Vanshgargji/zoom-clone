@@ -5,7 +5,7 @@ import type { ComponentProps } from "react";
 export function Card({ className, ...props }: ComponentProps<"section">) {
   return (
     <section
-      className={clsx("rounded-2xl bg-white shadow-[0_8px_30px_rgba(0,0,0,0.12)] border border-gray-100/50", className)}
+      className={clsx("rounded-2xl bg-white shadow-[0_4px_16px_rgba(0,0,0,0.08)] border border-gray-100/50", className)}
       {...props}
     />
   );
