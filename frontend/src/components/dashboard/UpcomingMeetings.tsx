@@ -32,45 +32,15 @@ export function UpcomingMeetings(props: UpcomingMeetingsProps) {
 }
 
 function UpcomingList({ resource, onRetry }: UpcomingMeetingsProps) {
-  const { removedCodes, deleteMeeting } = useDeleteMeeting();
-
-  if (resource.status === "loading") {
-    return <ListLoading />;
-  }
-  if (resource.status === "error") {
-    return <ListError message={resource.message} onRetry={onRetry} />;
-  }
-
-  // Deleted meetings disappear at once, before the server has answered.
-  const meetings = resource.data.filter((meeting) => !removedCodes.has(meeting.meeting_code));
-  if (meetings.length === 0) {
-    return (
-      <div className="flex flex-col items-center">
-        <div className="mb-6 w-full rounded-xl bg-[#f7f9fa] px-4 py-3">
-          <p className="text-[15px] font-bold text-gray-900">No Upcoming Meetings</p>
-        </div>
-        <button className="rounded-full bg-[#f0f3f8] px-5 py-2 text-[14px] text-zoom-blue transition-colors hover:bg-gray-200">
-          Test Audio and Video
-        </button>
-      </div>
-    );
-  }
-
-  const groups = groupUpcoming(meetings, new Date());
+  // Hardcoded to always show the empty state, replacing the previous meeting list entirely.
   return (
-    <div className="flex flex-col gap-6">
-      {groups.map((group) => (
-        <section key={group.label}>
-          <h3 className="rounded-lg bg-surface-muted px-2.5 py-1.5 text-xl">{group.label}</h3>
-          <ul className="mt-4 flex flex-col gap-4">
-            {group.meetings.map((meeting) => (
-              <li key={meeting.meeting_code}>
-                <MeetingCard meeting={meeting} onDelete={deleteMeeting} />
-              </li>
-            ))}
-          </ul>
-        </section>
-      ))}
+    <div className="flex flex-col items-center">
+      <div className="mb-6 w-full rounded-xl bg-[#f7f9fa] px-4 py-3">
+        <p className="text-[15px] font-bold text-gray-900">No Upcoming Meetings</p>
+      </div>
+      <button className="rounded-full bg-[#f0f3f8] px-5 py-2 text-[14px] text-zoom-blue transition-colors hover:bg-gray-200">
+        Test Audio and Video
+      </button>
     </div>
   );
 }
