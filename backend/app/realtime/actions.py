@@ -11,8 +11,8 @@ run in a worker thread to keep the event loop free.
 
 import asyncio
 
-from fastapi import WebSocket
 from sqlalchemy.orm import Session, sessionmaker
+from fastapi import WebSocket
 from starlette.concurrency import run_in_threadpool
 
 from app.realtime.connection_manager import Connection, ConnectionManager

@@ -1,14 +1,14 @@
 from datetime import datetime
 
-from sqlalchemy import CheckConstraint, ForeignKey, Text
 from sqlalchemy.orm import Mapped, mapped_column
+from sqlalchemy import CheckConstraint, ForeignKey, Text
 
-from app.db import Base
 from app.utils.time import UTCDateTime, utc_now
+from app.db import Base
 
 
 class ChatMessage(Base):
-    """A chat message sent during a session."""
+    """Using Session a chat message is sent """
 
     __tablename__ = "chat_messages"
     __table_args__ = (

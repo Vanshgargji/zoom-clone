@@ -16,8 +16,8 @@ MeetingType = Literal["instant", "scheduled"]
 
 class Meeting(Base):
     """A meeting as planned: started instantly or scheduled for later.
-
-    Each time it actually runs is a MeetingSession.
+ 
+    It is actually a meeting session each time when it runs. 
     """
 
     __tablename__ = "meetings"

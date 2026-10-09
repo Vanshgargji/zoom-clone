@@ -1,10 +1,10 @@
 from datetime import datetime
-from typing import TYPE_CHECKING
 
 from sqlalchemy import CheckConstraint, ForeignKey, Index, text
 from sqlalchemy.orm import Mapped, mapped_column, relationship
-
+from typing import TYPE_CHECKING
 from app.db import Base
+
 from app.utils.time import UTCDateTime, utc_now
 
 if TYPE_CHECKING:
@@ -15,7 +15,8 @@ if TYPE_CHECKING:
 class MeetingSession(Base):
     """One actual run of a meeting (Zoom calls it a "meeting instance").
 
-    ended_at is NULL while the session is live.
+
+       While session is live ended_at is NULL
     """
 
     __tablename__ = "meeting_sessions"

@@ -15,7 +15,9 @@ ParticipantStatus = Literal["in_meeting", "left", "removed"]
 
 
 class Participant(Base):
-    """One join of a session. Guests have no user_id."""
+    """One join of a session. 
+    Guest has no user id"""
+    
 
     __tablename__ = "participants"
     __table_args__ = (
